@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Calculadora Clickes</title>
+</head>
+<body class="bg-secondary" style="font-family: 'Share Tech Mono', monospace;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
+            <div class="container-fluid">
+              <p class="navbar-brand" style="margin: 0;">Calculadora Clickes</p>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropstart">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Conquistas
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><p class="dropdown-item">Toda ajuda possível</p></li>
+                      <li><p class="dropdown-item">De tudo um pouco</p></li>
+                      <li><p class="dropdown-item">Será que sou um gênio agora?</p></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-4" style="background-image: url(https://i.pinimg.com/originals/16/02/b2/1602b26c05ee78120695d592a68b8912.gif);">
+                    <p class="fs-3 text-white text-center">
+                        Problemas
+                    </p>
+                    <div id="mathProblems" class="fs-4 text-white text-center">1+1</div>
+                    <img class="img-fluid" src="assets/images/calculadora.png" alt="Calculadora">
+                    <div id="points" class="fs-1 text-white text-center">0</div>
+                    <p class="fs-3 text-white text-center">
+                        Pontos
+                    </p>
+                    <input class="input-group" style="text-align: right;" type="number" name="" id="">
+                    <div class="text-center" style="padding: 10px;">
+                        <button type="button" class="btn btn-lg btn-dark">OK</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="container row">
+                        <p class="fs-3 text-white text-center">
+                            Operações
+                        </p>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
+                                <p style="margin: 0;">Soma e Subtração</p>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-success">ON</button>
+                                        <button type="button" class="btn btn-danger">OFF</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
+                                <p style="margin: 0;">Multiplicação e Divisão</p>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-success">ON</button>
+                                        <button type="button" class="btn btn-danger">OFF</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
+                                <p style="margin: 0;">Potência e Raiz Quadrada</p>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-success">ON</button>
+                                        <button type="button" class="btn btn-danger">OFF</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
+                                <p style="margin: 0;">Produto Notável</p>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-success">ON</button>
+                                        <button type="button" class="btn btn-danger">OFF</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container row">
+                        <p class="fs-3 text-white text-center">
+                            Upgrades
+                        </p>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                                <p style="margin: 0;">Toddynho</p>
+                                <div class="d-flex flex-row-reverse bd-highlight">
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 10
+                                    </button>
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 1
+                                    </button>
+                                  </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                                <p style="margin: 0;">Vinho</p>
+                                <div class="d-flex flex-row-reverse bd-highlight">
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 10
+                                    </button>
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 1
+                                    </button>
+                                  </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                                <p style="margin: 0;">Monster</p>
+                                <div class="d-flex flex-row-reverse bd-highlight">
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 10
+                                    </button>
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 1
+                                    </button>
+                                  </div>
+                            </li>
+                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                                <p style="margin: 0;">Café</p>
+                                <div class="d-flex flex-row-reverse bd-highlight">
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 10
+                                    </button>
+                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                        + 1
+                                    </button>
+                                  </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <p class="fs-3 text-white text-center">
+                        Ajudantes
+                    </p>
+                    <div class="card mb-3" style="max-width: 560px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://place-hold.it/300x450" class="img-fluid rounded-start" alt="...">
+                            </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-title"><strong>Prodígio do Primário</strong></p>
+                              <p class="card-text">Aprendendo o básico.</p>
+                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-3" style="max-width: 560px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                                <img src="https://place-hold.it/300x450" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-title"><strong>Jesus</strong></p>
+                              <p class="card-text">Multiplicando Pão e o dividindo.</p>
+                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-3" style="max-width: 560px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                                <img src="https://place-hold.it/300x450" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-title"><strong>Nerd do Ensino Médio</strong></p>
+                              <p class="card-text">Estudando para ser um desenvolvedor.</p>
+                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card mb-3" style="max-width: 560px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                                <img src="https://place-hold.it/300x450" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-title"><strong>Einstein</strong></p>
+                              <p class="card-text">Apenas matando o tempo.</p>
+                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="idle game/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</body>
+</html>
