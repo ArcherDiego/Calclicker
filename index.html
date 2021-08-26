@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <title>Calculadora Clickes</title>
+    <title>Calclickes</title>
 </head>
 <body class="bg-secondary" style="font-family: 'Share Tech Mono', monospace;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
             <div class="container-fluid">
-              <p class="navbar-brand" style="margin: 0;">Calculadora Clickes</p>
+              <p class="navbar-brand" style="margin: 0;">Calclickes</p>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -28,6 +28,7 @@
                       <li><p class="dropdown-item">Toda ajuda possível</p></li>
                       <li><p class="dropdown-item">De tudo um pouco</p></li>
                       <li><p class="dropdown-item">Será que sou um gênio agora?</p></li>
+                      <li><p class="dropdown-item">Espero que não esteja usando uma agora</p></li>
                     </ul>
                   </li>
                 </ul>
@@ -39,23 +40,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-4" style="background-image: url(https://i.pinimg.com/originals/16/02/b2/1602b26c05ee78120695d592a68b8912.gif);">
-                    <p class="fs-3 text-white text-center">
+                    <p class="fs-3 text-white text-center" style="margin-top: 10px;">
                         Problemas
                     </p>
                     <div id="mathProblems" class="fs-4 text-white text-center">1+1</div>
                     <img class="img-fluid" src="assets/images/calculadora.png" alt="Calculadora">
                     <div id="points" class="fs-1 text-white text-center">0</div>
-                    <p class="fs-3 text-white text-center">
-                        Pontos
-                    </p>
-                    <input class="input-group" style="text-align: right;" type="number" name="" id="">
+                    <input class="input-group" style="text-align: right;" type="number" name="" id="result">
                     <div class="text-center" style="padding: 10px;">
-                        <button type="button" class="btn btn-lg btn-dark">OK</button>
+                        <button id="btnOk" type="button" class="btn btn-lg btn-dark">OK</button>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="container row">
-                        <p class="fs-3 text-white text-center">
+                        <p class="fs-3 text-white text-center" style="margin-top: 10px;">
                             Operações
                         </p>
                         <ul class="list-group">
@@ -98,59 +96,103 @@
                         </ul>
                     </div>
                     <div class="container row">
-                        <p class="fs-3 text-white text-center">
+                        <p class="fs-3 text-white text-center" style="margin-top: 10px;">
                             Upgrades
                         </p>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                                <p style="margin: 0;">Toddynho</p>
-                                <div class="d-flex flex-row-reverse bd-highlight">
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 10
-                                    </button>
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 1
-                                    </button>
-                                  </div>
-                            </li>
-                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                                <p style="margin: 0;">Vinho</p>
-                                <div class="d-flex flex-row-reverse bd-highlight">
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 10
-                                    </button>
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 1
-                                    </button>
-                                  </div>
-                            </li>
-                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                                <p style="margin: 0;">Monster</p>
-                                <div class="d-flex flex-row-reverse bd-highlight">
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 10
-                                    </button>
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 1
-                                    </button>
-                                  </div>
-                            </li>
-                            <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                                <p style="margin: 0;">Café</p>
-                                <div class="d-flex flex-row-reverse bd-highlight">
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 10
-                                    </button>
-                                    <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                        + 1
-                                    </button>
-                                  </div>
-                            </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Giz e Lousa</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 10
+                                </button>
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 1
+                                </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Caderno</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 10
+                                </button>
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 1
+                                </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Calculadora</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 10
+                                </button>
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 1
+                                </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Usando regras</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 10
+                                </button>
+                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                    + 1
+                                </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                              <p style="margin: 0;">Toddynho</p>
+                              <div class="d-flex flex-row-reverse bd-highlight">
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 10
+                                  </button>
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 1
+                                  </button>
+                              </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                              <p style="margin: 0;">Vinho</p>
+                              <div class="d-flex flex-row-reverse bd-highlight">
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 10
+                                  </button>
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 1
+                                  </button>
+                              </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                              <p style="margin: 0;">Monster</p>
+                              <div class="d-flex flex-row-reverse bd-highlight">
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 10
+                                  </button>
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 1
+                                  </button>
+                              </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                              <p style="margin: 0;">Café</p>
+                              <div class="d-flex flex-row-reverse bd-highlight">
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 10
+                                  </button>
+                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
+                                      + 1
+                                  </button>
+                              </div>
+                          </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-4">
-                    <p class="fs-3 text-white text-center">
+                    <p class="fs-3 text-white text-center" style="margin-top: 10px;">
                         Ajudantes
                     </p>
                     <div class="card mb-3" style="max-width: 560px;">
