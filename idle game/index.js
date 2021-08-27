@@ -6,9 +6,9 @@ const buttonOK = document.getElementById('btnOk')
 var totalPoints = 0
 points.innerText = `${totalPoints} P`
 
-// Operações
+// Problemas (math)
 
-var operations = Math.floor(Math.random() * 8) + 1
+const operations = Math.floor(Math.random() * 8) + 1
 switch(operations){
     case 1:
         sumExpression()
@@ -80,4 +80,81 @@ function product2Expression(){
     let div1 = Math.floor(Math.random() * 25) + 1
     let div2 = Math.floor(Math.random() * 25) + 1
     return problems.innerText = `(${div1} - ${div2})²`
+}
+
+// Operações
+/*
+var btnSwitch = document.getElementById('btnMultDiv')
+
+btnSwitch.onclick = function(){
+    if(btnSwitch.innerText = 'OFF'){
+        btnSwitch.innerText = 'ON'
+        btnSwitch.style.backgroundColor = 'green'
+    } else if(btnSwitch.innerText = 'ON'){
+        btnSwitch.innerText = 'OFF'
+        btnSwitch.style.backgroundColor = 'red'
+    }
+}
+*/
+
+// Ajudantes
+
+const btnCall1 = document.getElementById('btnCall1')
+btnCall1.onclick = function(){
+    if(totalPoints > 99){
+        totalPoints-=100
+        points.innerText = `${totalPoints} P`
+        btnCall1.innerText = 'Chamou'
+        btnCall1.style.backgroundColor = 'green'
+        setInterval(function(){
+            totalPoints += 15
+            return points.innerText = `${totalPoints} P`
+        },60000)
+        btnCall1.disabled = true
+    }
+}
+
+const btnCall2 = document.getElementById('btnCall2')
+btnCall2.onclick = function(){
+    if(totalPoints > 249){
+        totalPoints-=250
+        points.innerText = `${totalPoints} P`
+        btnCall2.innerText = 'Chamou'
+        btnCall2.style.backgroundColor = 'green'
+        setInterval(function(){
+            totalPoints += 40
+            return points.innerText = `${totalPoints} P`
+        },60000)
+        btnCall2.disabled = true
+    }
+}
+
+const btnCall3 = document.getElementById('btnCall3')
+btnCall3.onclick = function(){
+    if(totalPoints > 499){
+        totalPoints-=500
+        points.innerText = `${totalPoints} P`
+        btnCall3.innerText = 'Chamou'
+        btnCall3.style.backgroundColor = 'green'
+        setInterval(function(){
+            totalPoints += 75
+            return points.innerText = `${totalPoints} P`
+        },60000)
+        btnCall3.disabled = true
+    }
+}
+
+const btnCall4 = document.getElementById('btnCall4')
+btnCall4.onclick = function(){
+    if(totalPoints > 999){
+        totalPoints-=1000
+        points.innerText = `${totalPoints} P`
+        btnCall4.innerText = 'Chamou'
+        btnCall4.style.backgroundColor = 'green'
+        setInterval(function(){
+            totalPoints += 150
+            return points.innerText = `${totalPoints} P`
+        },60000)
+        btnCall4.disabled = true
+    }
 }

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/Calculator.ico" type="image/x-icon">
     <title>Calclickes</title>
 </head>
 <body class="bg-secondary" style="font-family: 'Share Tech Mono', monospace;">
@@ -46,7 +47,7 @@
                     <div id="mathProblems" class="fs-4 text-white text-center">1+1</div>
                     <img class="img-fluid" src="assets/images/calculadora.png" alt="Calculadora">
                     <div id="points" class="fs-1 text-white text-center">0</div>
-                    <input class="input-group" style="text-align: right;" type="number" name="" id="result">
+                    <input class="input-group" style="text-align: right;" type="number" id="result">
                     <div class="text-center" style="padding: 10px;">
                         <button id="btnOk" type="button" class="btn btn-lg btn-dark">OK</button>
                     </div>
@@ -59,39 +60,21 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Soma e Subtração</p>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group me-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-success">ON</button>
-                                        <button type="button" class="btn btn-danger">OFF</button>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-success" style="width: 50px;">ON</button>
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Multiplicação e Divisão</p>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group me-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-success">ON</button>
-                                        <button type="button" class="btn btn-danger">OFF</button>
-                                    </div>
-                                </div>
+                                <button id="btnMultDiv" type="button" class="btn btn-danger" style="width: 50px;">
+                                    OFF
+                                </button>
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Potência e Raiz Quadrada</p>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group me-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-success">ON</button>
-                                        <button type="button" class="btn btn-danger">OFF</button>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-danger" style="width: 50px;">OFF</button> 
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Produto Notável</p>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group me-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-success">ON</button>
-                                        <button type="button" class="btn btn-danger">OFF</button>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-danger" style="width: 50px;">OFF</button>
                             </li>
                         </ul>
                     </div>
@@ -202,9 +185,11 @@
                             </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <p class="card-title"><strong>Prodígio do Primário</strong></p>
-                              <p class="card-text">Aprendendo o básico.</p>
-                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                                <p class="card-title"><strong>Prodígio do Primário</strong></p>
+                                <p class="card-text">Aprendendo o básico.</p>
+                                <button id="btnCall1" type="button" class="btn bt-sm btn-dark">
+                                  Chamar por 100 P
+                                </button>
                             </div>
                           </div>
                         </div>
@@ -216,9 +201,11 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <p class="card-title"><strong>Jesus</strong></p>
-                              <p class="card-text">Multiplicando Pão e o dividindo.</p>
-                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                                <p class="card-title"><strong>Jesus</strong></p>
+                                <p class="card-text">Multiplicando Pão e o dividindo.</p>
+                                <button id="btnCall2" type="button" class="btn bt-sm btn-dark">
+                                  Chamar por 250 P
+                                </button>
                             </div>
                           </div>
                         </div>
@@ -230,9 +217,11 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <p class="card-title"><strong>Nerd do Ensino Médio</strong></p>
-                              <p class="card-text">Estudando para ser um desenvolvedor.</p>
-                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                                <p class="card-title"><strong>Nerd do Ensino Médio</strong></p>
+                                <p class="card-text">Estudando para ser um desenvolvedor.</p>
+                                <button id="btnCall3" type="button" class="btn bt-sm btn-dark">
+                                  Chamar por 500 P
+                                </button>
                             </div>
                           </div>
                         </div>
@@ -244,9 +233,11 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <p class="card-title"><strong>Einstein</strong></p>
-                              <p class="card-text">Apenas matando o tempo.</p>
-                              <button type="button" class="btn bt-sm btn-dark">Chamar</button>
+                                <p class="card-title"><strong>Einstein</strong></p>
+                                <p class="card-text">Apenas matando o tempo.</p>
+                                <button id="btnCall4" type="button" class="btn bt-sm btn-dark">
+                                  Chamar por 1000 P
+                                </button>
                             </div>
                           </div>
                         </div>
