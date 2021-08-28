@@ -3,12 +3,65 @@ const points = document.getElementById('points')
 const result = document.getElementById('result')
 const buttonOK = document.getElementById('btnOk')
 
-var totalPoints = 0
+var totalPoints = 10000
 points.innerText = `${totalPoints} P`
 
+// Operações
+
+/*
+const btnMultDiv = document.getElementById('btnMultDiv')
+const btnPotSqrt = document.getElementById('btnPotSqrt')
+const btnProduct = document.getElementById('btnProduct')
+var interruptMultDiv = 'OFF'
+var interruptPotSqrt = 'OFF'
+var interruptProduct = 'OFF'
+var n = 0
+
+btnMultDiv.innerText = `${interruptMultDiv}`
+btnPotSqrt.innerText = `${interruptPotSqrt}`
+btnProduct.innerText = `${interruptProduct}`
+
+btnMultDiv.onclick = function(){
+    if(interruptMultDiv == 'OFF'){
+        interruptMultDiv = 'ON'
+        btnMultDiv.innerText = `${interruptMultDiv}`
+        btnMultDiv.classList.remove('btn-danger')
+        btnMultDiv.classList.add('btn-success')
+        return n+=2
+    } else if(interruptMultDiv == 'ON'){
+        interrupt = 'OFF'
+        btnMultDiv.innerText = `${interruptMultDiv}`
+        btnMultDiv.classList.remove('btn-success')
+        btnMultDiv.classList.add('btn-danger')
+        return n-=2
+    }
+}
+
+btnPotSqrt.onclick = function(){
+    if(interruptPotSqrt == 'OFF'){
+        interruptPotSqrt = 'ON'
+        btnPotSqrt.innerText = `${interruptPotSqrt}`
+        btnPotSqrt.classList.remove('btn-danger')
+        btnPotSqrt.classList.add('btn-success')
+        if(interruptMultDiv == 'OFF'){
+            interruptMultDiv = 'ON'
+            btnMultDiv.innerText = `${interruptMultDiv}`
+            btnMultDiv.classList.remove('btn-danger')
+            btnMultDiv.classList.add('btn-success')
+        }
+        return n+=2
+    } else {
+        interrupt = 'OFF'
+        btnPotSqrt.innerText = `${interrupt}`
+        btnPotSqrt.classList.add('btn-danger')
+        btnPotSqrt.classList.remove('btn-success')
+        return n-=2
+    }
+}
+*/
 // Problemas (math)
 
-const operations = Math.floor(Math.random() * 8) + 1
+const operations = Math.floor(Math.random() * (2 + 5)) + 1
 switch(operations){
     case 1:
         sumExpression()
@@ -82,20 +135,6 @@ function product2Expression(){
     return problems.innerText = `(${div1} - ${div2})²`
 }
 
-// Operações
-/*
-var btnSwitch = document.getElementById('btnMultDiv')
-
-btnSwitch.onclick = function(){
-    if(btnSwitch.innerText = 'OFF'){
-        btnSwitch.innerText = 'ON'
-        btnSwitch.style.backgroundColor = 'green'
-    } else if(btnSwitch.innerText = 'ON'){
-        btnSwitch.innerText = 'OFF'
-        btnSwitch.style.backgroundColor = 'red'
-    }
-}
-*/
 
 // Ajudantes
 
@@ -158,3 +197,6 @@ btnCall4.onclick = function(){
         btnCall4.disabled = true
     }
 }
+
+// Upgrades
+

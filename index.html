@@ -60,7 +60,9 @@
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Soma e Subtração</p>
-                                <button type="button" class="btn btn-success" style="width: 50px;">ON</button>
+                                <button id="btnSumSubt" type="button" class="btn btn-success" style="width: 50px;">
+                                  ON
+                                </button>
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Multiplicação e Divisão</p>
@@ -70,11 +72,15 @@
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Potência e Raiz Quadrada</p>
-                                <button type="button" class="btn btn-danger" style="width: 50px;">OFF</button> 
+                                <button id="btnPotSqrt" type="button" class="btn btn-danger" style="width: 50px;">
+                                  OFF
+                                </button> 
                             </li>
                             <li class="list-group-item list-group-item-primary d-flex justify-content-between" style="align-items: center;">
                                 <p style="margin: 0;">Produto Notável</p>
-                                <button type="button" class="btn btn-danger" style="width: 50px;">OFF</button>
+                                <button id="btnProduct" type="button" class="btn btn-danger" style="width: 50px;">
+                                  OFF
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -86,9 +92,20 @@
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                             <p style="margin: 0;">Giz e Lousa</p>
                             <div class="d-flex flex-row-reverse bd-highlight">
+                                <div id="chalkPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  5,00 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                    + 10
+                                    + 1
                                 </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Toddynho</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <div id="toddyPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  10,00 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                     + 1
                                 </button>
@@ -97,9 +114,9 @@
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                             <p style="margin: 0;">Caderno</p>
                             <div class="d-flex flex-row-reverse bd-highlight">
-                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                    + 10
-                                </button>
+                                <div id="bookPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  12,50 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                     + 1
                                 </button>
@@ -108,9 +125,20 @@
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                             <p style="margin: 0;">Calculadora</p>
                             <div class="d-flex flex-row-reverse bd-highlight">
+                                <div id="calculatorPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  25,00 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                    + 10
+                                    + 1
                                 </button>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
+                            <p style="margin: 0;">Vinho</p>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <div id="winePrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  25,00 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                     + 1
                                 </button>
@@ -119,42 +147,20 @@
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                             <p style="margin: 0;">Usando regras</p>
                             <div class="d-flex flex-row-reverse bd-highlight">
-                                <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                    + 10
-                                </button>
+                                <div id="rulesPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                  50,00 P
+                                </div>
                                 <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                     + 1
                                 </button>
                             </div>
-                          </li>
-                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                              <p style="margin: 0;">Toddynho</p>
-                              <div class="d-flex flex-row-reverse bd-highlight">
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 10
-                                  </button>
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 1
-                                  </button>
-                              </div>
-                          </li>
-                          <li class="list-group-item list-group-item-primary d-flex justify-content-between">
-                              <p style="margin: 0;">Vinho</p>
-                              <div class="d-flex flex-row-reverse bd-highlight">
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 10
-                                  </button>
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 1
-                                  </button>
-                              </div>
-                          </li>
+                          </li> 
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                               <p style="margin: 0;">Monster</p>
                               <div class="d-flex flex-row-reverse bd-highlight">
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 10
-                                  </button>
+                                  <div id="monsterPrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                    50,00 P
+                                  </div>
                                   <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                       + 1
                                   </button>
@@ -163,9 +169,9 @@
                           <li class="list-group-item list-group-item-primary d-flex justify-content-between">
                               <p style="margin: 0;">Café</p>
                               <div class="d-flex flex-row-reverse bd-highlight">
-                                  <button type="button" class="btn btn-dark" style="margin-left: 10px;">
-                                      + 10
-                                  </button>
+                                  <div id="coffeePrice" class="d-flex justify-content-between align-items-center" style="width: 75px; margin-left: 10px;">
+                                    100,00 P
+                                  </div>
                                   <button type="button" class="btn btn-dark" style="margin-left: 10px;">
                                       + 1
                                   </button>
@@ -187,9 +193,12 @@
                             <div class="card-body">
                                 <p class="card-title"><strong>Prodígio do Primário</strong></p>
                                 <p class="card-text">Aprendendo o básico.</p>
-                                <button id="btnCall1" type="button" class="btn bt-sm btn-dark">
-                                  Chamar por 100 P
-                                </button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <button id="btnCall1" type="button" class="btn bt-sm btn-dark">
+                                    Chamar
+                                  </button>
+                                  <p class="card-text">100 P</p>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -203,9 +212,12 @@
                             <div class="card-body">
                                 <p class="card-title"><strong>Jesus</strong></p>
                                 <p class="card-text">Multiplicando Pão e o dividindo.</p>
-                                <button id="btnCall2" type="button" class="btn bt-sm btn-dark">
-                                  Chamar por 250 P
-                                </button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <button id="btnCall2" type="button" class="btn bt-sm btn-dark">
+                                    Chamar
+                                  </button>
+                                  <p class="card-text">250 P</p>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -219,9 +231,12 @@
                             <div class="card-body">
                                 <p class="card-title"><strong>Nerd do Ensino Médio</strong></p>
                                 <p class="card-text">Estudando para ser um desenvolvedor.</p>
-                                <button id="btnCall3" type="button" class="btn bt-sm btn-dark">
-                                  Chamar por 500 P
-                                </button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <button id="btnCall3" type="button" class="btn bt-sm btn-dark">
+                                    Chamar
+                                  </button>
+                                  <p class="card-text">500 P</p>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -235,9 +250,12 @@
                             <div class="card-body">
                                 <p class="card-title"><strong>Einstein</strong></p>
                                 <p class="card-text">Apenas matando o tempo.</p>
-                                <button id="btnCall4" type="button" class="btn bt-sm btn-dark">
-                                  Chamar por 1000 P
-                                </button>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <button id="btnCall4" type="button" class="btn bt-sm btn-dark">
+                                    Chamar
+                                  </button>
+                                  <p class="card-text">1000 P</p>
+                                </div>
                             </div>
                           </div>
                         </div>
