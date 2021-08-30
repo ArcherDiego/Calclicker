@@ -1,25 +1,32 @@
+const body = document.getElementsByTagName('body')[0]
 const problems = document.getElementById('mathProblems')
 const points = document.getElementById('points')
 const result = document.getElementById('result')
 const buttonOK = document.getElementById('btnOk')
 
-var totalPoints = 10000
+var totalPoints = 10001
 points.innerText = `${totalPoints} P`
+
 
 // Operações
 
-/*
+const btnSumSubt = document.getElementById('btnSumSubt')
 const btnMultDiv = document.getElementById('btnMultDiv')
 const btnPotSqrt = document.getElementById('btnPotSqrt')
 const btnProduct = document.getElementById('btnProduct')
-var interruptMultDiv = 'OFF'
-var interruptPotSqrt = 'OFF'
-var interruptProduct = 'OFF'
-var n = 0
 
+let interruptSumSubt = 'ON'
+let interruptMultDiv = 'OFF'
+let interruptPotSqrt = 'OFF'
+let interruptProduct = 'OFF'
+let n = 0
+
+btnSumSubt.innerText = `${interruptSumSubt}`
 btnMultDiv.innerText = `${interruptMultDiv}`
 btnPotSqrt.innerText = `${interruptPotSqrt}`
 btnProduct.innerText = `${interruptProduct}`
+
+btnSumSubt.disabled = true
 
 btnMultDiv.onclick = function(){
     if(interruptMultDiv == 'OFF'){
@@ -28,8 +35,8 @@ btnMultDiv.onclick = function(){
         btnMultDiv.classList.remove('btn-danger')
         btnMultDiv.classList.add('btn-success')
         return n+=2
-    } else if(interruptMultDiv == 'ON'){
-        interrupt = 'OFF'
+    } else{
+        interruptMultDiv = 'OFF'
         btnMultDiv.innerText = `${interruptMultDiv}`
         btnMultDiv.classList.remove('btn-success')
         btnMultDiv.classList.add('btn-danger')
@@ -48,20 +55,57 @@ btnPotSqrt.onclick = function(){
             btnMultDiv.innerText = `${interruptMultDiv}`
             btnMultDiv.classList.remove('btn-danger')
             btnMultDiv.classList.add('btn-success')
+            btnMultDiv.disabled = true
+            return n+=2
+        } else{
+            btnMultDiv.disabled = true
         }
         return n+=2
-    } else {
-        interrupt = 'OFF'
-        btnPotSqrt.innerText = `${interrupt}`
+    } else if(interruptPotSqrt == 'ON'){
+        interruptPotSqrt = 'OFF'
+        btnPotSqrt.innerText = `${interruptPotSqrt}`
         btnPotSqrt.classList.add('btn-danger')
         btnPotSqrt.classList.remove('btn-success')
+        btnMultDiv.disabled = false
         return n-=2
     }
 }
-*/
+
+btnProduct.onclick = function(){
+    if(interruptProduct == 'OFF'){
+        interruptProduct = 'ON'
+        btnProduct.innerText = `${interruptProduct}`
+        btnProduct.classList.remove('btn-danger')
+        btnProduct.classList.add('btn-success')
+        if(interruptPotSqrt == 'OFF'){
+            interruptPotSqrt = 'ON'
+            btnPotSqrt.innerText = `${interruptPotSqrt}`
+            btnPotSqrt.classList.remove('btn-danger')
+            btnPotSqrt.classList.add('btn-success')
+            btnPotSqrt.disabled = true
+            interruptMultDiv = 'ON'
+            btnMultDiv.innerText = `${interruptMultDiv}`
+            btnMultDiv.classList.remove('btn-danger')
+            btnMultDiv.classList.add('btn-success')
+            btnMultDiv.disabled = true
+            return n+=4
+        } else{
+            btnPotSqrt.disabled = true
+        }
+        return n+=2
+    } else if(interruptProduct == 'ON'){
+        interruptProduct = 'OFF'
+        btnProduct.innerText = `${interruptProduct}`
+        btnProduct.classList.add('btn-danger')
+        btnProduct.classList.remove('btn-success')
+        btnPotSqrt.disabled = false
+        return n-=2
+    }
+}
+
 // Problemas (math)
 
-const operations = Math.floor(Math.random() * (2 + 5)) + 1
+const operations = Math.floor(Math.random() * (2 + n)) + 1
 switch(operations){
     case 1:
         sumExpression()
