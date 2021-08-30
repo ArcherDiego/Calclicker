@@ -4,7 +4,8 @@ const points = document.getElementById('points')
 const result = document.getElementById('result')
 const buttonOK = document.getElementById('btnOk')
 
-var totalPoints = 10001
+var totalPoints = 1000
+totalPoints = totalPoints.toFixed(2)
 points.innerText = `${totalPoints} P`
 
 
@@ -182,65 +183,192 @@ function product2Expression(){
 
 // Ajudantes
 
+var updradeToddy = 2
+var updrade1 = 1
+
 const btnCall1 = document.getElementById('btnCall1')
 btnCall1.onclick = function(){
     if(totalPoints > 99){
         totalPoints-=100
+        totalPoints = totalPoints.toFixed(2)
         points.innerText = `${totalPoints} P`
         btnCall1.innerText = 'Chamou'
         btnCall1.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += 15
+            totalPoints += ((15 / 2) * (updradeToddy * updrade1))
+            totalPoints = totalPoints.toFixed(2)
             return points.innerText = `${totalPoints} P`
         },60000)
         btnCall1.disabled = true
+        btnToddy.disabled = false
     }
 }
+
+var updradeWine = 1.75
+var updrade2 = 1
 
 const btnCall2 = document.getElementById('btnCall2')
 btnCall2.onclick = function(){
     if(totalPoints > 249){
         totalPoints-=250
+        totalPoints = totalPoints.toFixed(2)
         points.innerText = `${totalPoints} P`
         btnCall2.innerText = 'Chamou'
         btnCall2.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += 40
+            totalPoints += ((40 / 1.75) * (updradeWine * updrade2))
+            totalPoints = totalPoints.toFixed(2)
             return points.innerText = `${totalPoints} P`
         },60000)
         btnCall2.disabled = true
+        btnWine.disabled = false
     }
 }
+
+var updradeMonster = 1.5
+var updrade3 = 1
 
 const btnCall3 = document.getElementById('btnCall3')
 btnCall3.onclick = function(){
     if(totalPoints > 499){
         totalPoints-=500
+        totalPoints = totalPoints.toFixed(2)
         points.innerText = `${totalPoints} P`
         btnCall3.innerText = 'Chamou'
         btnCall3.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += 75
+            totalPoints += ((75 / 1.5) * (updradeMonster * updrade3))
+            totalPoints = totalPoints.toFixed(2)
             return points.innerText = `${totalPoints} P`
         },60000)
         btnCall3.disabled = true
+        btnMonster.disabled = false
     }
 }
+
+var updradeCoffee = 1.25
+var updrade4 = 1
 
 const btnCall4 = document.getElementById('btnCall4')
 btnCall4.onclick = function(){
     if(totalPoints > 999){
         totalPoints-=1000
+        totalPoints = totalPoints.toFixed(2)
         points.innerText = `${totalPoints} P`
         btnCall4.innerText = 'Chamou'
         btnCall4.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += 150
+            totalPoints += ((150 / 1.25) * ( updradeCoffee * updrade4))
+            totalPoints = totalPoints.toFixed(2)
             return points.innerText = `${totalPoints} P`
         },60000)
         btnCall4.disabled = true
+        btnCoffee.disabled = false
     }
 }
 
 // Upgrades
 
+// Prices
+const chalkPrice = document.getElementById('chalkPrice')
+const toddyPrice = document.getElementById('toddyPrice')
+const bookPrice = document.getElementById('bookPrice')
+const calculatorPrice = document.getElementById('calculatorPrice')
+
+const winePrice = document.getElementById('winePrice')
+const rulesPrice = document.getElementById('rulesPrice')
+const monsterPrice = document.getElementById('monsterPrice')
+const coffeePrice = document.getElementById('coffeePrice')
+
+let totalToddyPrice = 10
+totalToddyPrice = totalToddyPrice.toFixed(2)
+toddyPrice.innerText = `${totalToddyPrice} P`
+let totalWinePrice = 25
+totalWinePrice = totalWinePrice.toFixed(2)
+winePrice.innerText = `${totalWinePrice} P`
+let totalMonsterPrice = 50
+totalMonsterPrice = totalMonsterPrice.toFixed(2)
+monsterPrice.innerText = `${totalMonsterPrice} P`
+let totalCoffeePrice = 100
+totalCoffeePrice = totalCoffeePrice.toFixed(2)
+coffeePrice.innerText = `${totalCoffeePrice} P`
+
+let totalChalkPrice = 5
+totalChalkPrice = totalChalkPrice.toFixed(2)
+chalkPrice.innerText = `${totalChalkPrice} P`
+let totalBookPrice = 12.5
+totalBookPrice = totalBookPrice.toFixed(2)
+bookPrice.innerText = `${totalBookPrice} P`
+let totalCalculatorPrice = 25
+totalCalculatorPrice = totalCalculatorPrice.toFixed(2)
+calculatorPrice.innerText = `${totalCalculatorPrice} P`
+let totalRulesPrice = 50
+totalRulesPrice = totalRulesPrice.toFixed(2)
+rulesPrice.innerText = `${totalRulesPrice} P`
+
+// Buttons
+const btnChalk = document.getElementById('btnChalk')
+const btnToddy = document.getElementById('btnToddy')
+const btnBook = document.getElementById('btnBook')
+const btnCalculator = document.getElementById('btnCalculator')
+const btnWine = document.getElementById('btnWine')
+const btnRules = document.getElementById('btnRules')
+const btnMonster = document.getElementById('btnMonster')
+const btnCoffee = document.getElementById('btnCoffee')
+
+btnToddy.disabled = true
+btnWine.disabled = true
+btnMonster.disabled = true
+btnCoffee.disabled = true
+
+// Helpers Buttons
+
+btnToddy.onclick = function(){
+    if(totalPoints > totalToddyPrice){
+        totalPoints-=totalToddyPrice
+        totalPoints = totalPoints.toFixed(2)
+        points.innerText = `${totalPoints} P`
+        totalToddyPrice*=1.25
+        totalToddyPrice = totalToddyPrice.toFixed(2)
+        toddyPrice.innerText = `${totalToddyPrice} P`
+        updrade1*=2
+    }
+}
+
+btnWine.onclick = function(){
+    if(totalPoints > totalWinePrice){
+        totalPoints-=totalWinePrice
+        totalPoints = totalPoints.toFixed(2)
+        points.innerText = `${totalPoints} P`
+        totalWinePrice*=1.5
+        totalWinePrice = totalWinePrice.toFixed(2)
+        winePrice.innerText = `${totalWinePrice} P`
+        updrade2*=1.75
+    }
+}
+
+btnMonster.onclick = function(){
+    if(totalPoints > totalMonsterPrice){
+        totalPoints-=totalMonsterPrice
+        totalPoints = totalPoints.toFixed(2)
+        points.innerText = `${totalPoints} P`
+        totalMonsterPrice*=1.75
+        totalMonsterPrice = totalMonsterPrice.toFixed(2)
+        monsterPrice.innerText = `${totalMonsterPrice} P`
+        updrade3*=1.5
+    }
+}
+
+btnCoffee.onclick = function(){
+    if(totalPoints > totalCoffeePrice){
+        totalPoints-=totalCoffeePrice
+        totalPoints = totalPoints.toFixed(2)
+        points.innerText = `${totalPoints} P`
+        totalCoffeePrice*=2
+        totalCoffeePrice = totalCoffeePrice.toFixed(2)
+        coffeePrice.innerText = `${totalCoffeePrice} P`
+        updrade4*=1.25
+    }
+}
+
+// Players Buttons
