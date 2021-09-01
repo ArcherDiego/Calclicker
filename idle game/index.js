@@ -100,25 +100,10 @@ btnProduct.onclick = function(){
         return n-=2
     }
 }
-// Verificação de Resultado
+// Problemas (math) && Verificação de Resultado
 
 const problems = document.getElementById('mathProblems')
-const result = document.getElementById('result')
 const buttonOK = document.getElementById('btnOk')
-
-/*buttonOK.onclick = function(){
-    if(result == sumResult){
-        totalPoints+=1
-        totalPoints.toFixed(2)
-        points.innerText = `${totalPoints} P`
-        operation()
-    } else{
-        points.innerText = `C U`
-        operation()
-    }
-}*/
-
-// Problemas (math)
 
 body.addEventListener("load", operation())
 function operation(){
@@ -157,56 +142,140 @@ function sumExpression(){
     let sumResult = sum1 + sum2
     problems.innerText = `${sum1} + ${sum2}`
     buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
         if(result == sumResult){
             totalPoints+=1
             totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
         } else{
-            points.innerText = `Missed`
             operation()
         }
     }
 }
 
 function subtExpression(){
-    let sub1 = Math.floor(Math.random() * 1000)
-    let sub2 = Math.floor(Math.random() * 1000)
-    return problems.innerText = `${sub1} - ${sub2}`
+    let subt1 = Math.floor(Math.random() * 1000)
+    let subt2 = Math.floor(Math.random() * 1000)
+    let subtResult = subt1 - subt2
+    problems.innerText = `${subt1} - ${subt2}`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == subtResult){
+            totalPoints+=1
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function multExpression(){
     let mult1 = Math.floor(Math.random() * 100)
     let mult2 = Math.floor(Math.random() * 100)
-    return problems.innerText = `${mult1} x ${mult2}`
+    let multResult = mult1 * mult2
+    problems.innerText = `${mult1} x ${mult2}`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == multResult){
+            totalPoints+=10
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function divExpression(){
-    let div1 = Math.floor(Math.random() * 100)
-    let div2 = Math.floor(Math.random() * 100)
-    return problems.innerText = `${div1} ÷ ${div2}`
+    let div1 = Math.floor(Math.random() * 100) + 1
+    let div2 = Math.floor(Math.random() * 100) + 1
+    let divResult = div1 / div2
+    problems.innerText = `${div1} ÷ ${div2}`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == divResult){
+            totalPoints+=10
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function potExpression(){
     let pot1 = Math.floor(Math.random() * 100) - 100
-    return problems.innerText = `${pot1}²`
+    let potResult = pot1 * pot1
+    problems.innerText = `${pot1}²`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == potResult){
+            totalPoints+=50
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function sqrtExpression(){
     let sqrt1 = Math.floor(Math.random() * 10000)
-    return problems.innerText = `√${sqrt1}`
+    let sqrtResult = Math.sqrt(sqrt1)
+    problems.innerText = `√${sqrt1}`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == sqrtResult){
+            totalPoints+=50
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function product1Expression(){
-    let div1 = Math.floor(Math.random() * 25) + 1
-    let div2 = Math.floor(Math.random() * 25) + 1
-    return problems.innerText = `(${div1} + ${div2})²`
+    let pro1 = Math.floor(Math.random() * 25) + 1
+    let pro2 = Math.floor(Math.random() * 25) + 1
+    let proResult = ((pro1 * pro1) + (2 * pro1 * pro2) + (pro2 * pro2))
+    problems.innerText = `(${pro1}x + ${pro2})²`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == proResult){
+            totalPoints+=100
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 function product2Expression(){
-    let div1 = Math.floor(Math.random() * 25) + 1
-    let div2 = Math.floor(Math.random() * 25) + 1
-    return problems.innerText = `(${div1} - ${div2})²`
+    let pro1 = Math.floor(Math.random() * 25) + 1
+    let pro2 = Math.floor(Math.random() * 25) + 1
+    let proResult = ((pro1 * pro1) - (2 * pro1 * pro2) + (pro2 * pro2))
+    problems.innerText = `(${div1}x - ${div2})²`
+    buttonOK.onclick = function(){
+        let result = document.getElementById('result').value
+        if(result == proResult){
+            totalPoints+=100
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            operation()
+        }
+    }
 }
 
 
