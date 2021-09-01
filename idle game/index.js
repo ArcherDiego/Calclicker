@@ -1,11 +1,8 @@
 const body = document.getElementsByTagName('body')[0]
-const problems = document.getElementById('mathProblems')
 const points = document.getElementById('points')
-const result = document.getElementById('result')
-const buttonOK = document.getElementById('btnOk')
 
-var totalPoints = 1000
-totalPoints = totalPoints.toFixed(2)
+
+var totalPoints = 0
 points.innerText = `${totalPoints} P`
 
 
@@ -103,41 +100,73 @@ btnProduct.onclick = function(){
         return n-=2
     }
 }
+// Verificação de Resultado
+
+const problems = document.getElementById('mathProblems')
+const result = document.getElementById('result')
+const buttonOK = document.getElementById('btnOk')
+
+/*buttonOK.onclick = function(){
+    if(result == sumResult){
+        totalPoints+=1
+        totalPoints.toFixed(2)
+        points.innerText = `${totalPoints} P`
+        operation()
+    } else{
+        points.innerText = `C U`
+        operation()
+    }
+}*/
 
 // Problemas (math)
 
-const operations = Math.floor(Math.random() * (2 + n)) + 1
-switch(operations){
-    case 1:
-        sumExpression()
-        break
-    case 2:
-        subtExpression()
-        break
-    case 3:
-        multExpression()
-        break
-    case 4:
-        divExpression()
-        break
-    case 5:
-        potExpression()
-        break
-    case 6:
-        sqrtExpression()
-        break
-    case 7:
-        product1Expression()
-        break
-    case 8:
-        product2Expression()
-        break
+body.addEventListener("load", operation())
+function operation(){
+    const operations = Math.floor(Math.random() * (2 + n)) + 1
+    switch(operations){
+        case 1:
+            sumExpression()
+            break
+        case 2:
+            subtExpression()
+            break
+        case 3:
+            multExpression()
+            break
+        case 4:
+            divExpression()
+            break
+        case 5:
+            potExpression()
+            break
+        case 6:
+            sqrtExpression()
+            break
+        case 7:
+            product1Expression()
+            break
+        case 8:
+            product2Expression()
+            break
+    }
 }
 
 function sumExpression(){
     let sum1 = Math.floor(Math.random() * 1000)
     let sum2 = Math.floor(Math.random() * 1000)
-    return problems.innerText = `${sum1} + ${sum2}`
+    let sumResult = sum1 + sum2
+    problems.innerText = `${sum1} + ${sum2}`
+    buttonOK.onclick = function(){
+        if(result == sumResult){
+            totalPoints+=1
+            totalPoints.toFixed(2)
+            points.innerText = `${totalPoints} P`
+            operation()
+        } else{
+            points.innerText = `Missed`
+            operation()
+        }
+    }
 }
 
 function subtExpression(){
