@@ -2,11 +2,30 @@ const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
 
-var totalPoints = 1000
+var totalPoints = 0
 points.innerText = `${totalPoints} P`
 
+// Are you correct?
 
-// Operações
+function correct(){
+    let imgCorrect = document.getElementById('imgCW')
+    imgCorrect.setAttribute('src', 'assets/images/correct.png')
+    setInterval(function(){
+        imgWrong.setAttribute('src', 'assets/images/nothing.png')
+    },3000)
+    operation()
+}
+
+function wrong(){
+    let imgWrong = document.getElementById('imgCW')
+    imgWrong.setAttribute('src', 'assets/images/wrong.png')
+    setInterval(function(){
+        imgWrong.setAttribute('src', 'assets/images/nothing.png')
+    },3000)
+    operation()
+}
+
+// Operations
 
 const btnSumSubt = document.getElementById('btnSumSubt')
 const btnMultDiv = document.getElementById('btnMultDiv')
@@ -100,7 +119,7 @@ btnProduct.onclick = function(){
         return n-=2
     }
 }
-// Problemas (math) && Verificação de Resultado
+// Problems (math) and verification
 
 const problems = document.getElementById('mathProblems')
 const buttonOK = document.getElementById('btnOk')
@@ -151,11 +170,13 @@ function sumExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -172,11 +193,13 @@ function subtExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -196,11 +219,13 @@ function multExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -217,11 +242,13 @@ function divExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -240,11 +267,13 @@ function potExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -260,11 +289,13 @@ function sqrtExpression(){
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            correct()
         } else{
             totalPoints -= 1
             totalPoints = totalPoints.toFixed(2)
             points.innerText = `${totalPoints} P`
             operation()
+            wrong()
         }
     }
 }
@@ -315,7 +346,7 @@ function product2Expression(){
 }
 
 
-// Ajudantes
+// Helpers
 
 var upgradeToddy = 2
 var upgrade1 = 1
@@ -402,7 +433,6 @@ btnCall4.onclick = function(){
 }
 
 // Upgrades
-
 // Prices
 const chalkPrice = document.getElementById('chalkPrice')
 const toddyPrice = document.getElementById('toddyPrice')
