@@ -134,9 +134,10 @@ function operation(){
     }
 }
 
+var upgradeSumSubt = 2
+var upgradeP1 = 1
+
 function sumExpression(){
-    let upgradeSumSubt = 2
-    let upgradeP1 = 1
     let sum1 = Math.floor(Math.random() * 1000)
     let sum2 = Math.floor(Math.random() * 1000)
     let sumResult = sum1 + sum2
@@ -144,20 +145,18 @@ function sumExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == sumResult){
-            totalPoints += ((1/2) * (upgradeSumSubt * upgradeP1))
-            points.innerText = `${totalPoints} P`
+            totalPoints += ( 1 * (upgradeSumSubt * upgradeP1))
+            points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         }
     }
 }
 
 function subtExpression(){
-    let upgradeSumSubt = 2
-    let upgradeP1 = 1
     let subt1 = Math.floor(Math.random() * 1000)
     let subt2 = Math.floor(Math.random() * 1000)
     let subtResult = subt1 - subt2
@@ -165,20 +164,21 @@ function subtExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == subtResult){
-            totalPoints += ((1/2) * (upgradeSumSubt * upgradeP1))
-            points.innerText = `${totalPoints} P`
+            totalPoints += ( 1 * (upgradeSumSubt * upgradeP1))
+            points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         }
     }
 }
 
+var upgradeMultDiv = 1.75
+var upgradeP2 = 1
+
 function multExpression(){
-    let upgradeMultDiv = 1.75
-    let upgradeP2 = 1
     let mult1 = Math.floor(Math.random() * 100)
     let mult2 = Math.floor(Math.random() * 100)
     let multResult = mult1 * mult2
@@ -187,19 +187,17 @@ function multExpression(){
         let result = document.getElementById('result').value
         if(result == multResult){
             totalPoints += ((10/1.75) * (upgradeMultDiv * upgradeP2))
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
 }
 
 function divExpression(){
-    let upgradeMultDiv = 1.75
-    let upgradeP2 = 1
     let div1 = Math.floor(Math.random() * 100) + 1
     let div2 = Math.floor(Math.random() * 100) + 1
     let divResult = div1 / div2
@@ -210,19 +208,20 @@ function divExpression(){
         let result = document.getElementById('result').value
         if(result == divResult){
             totalPoints += ((10/1.75) * (upgradeMultDiv * upgradeP2))
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
 }
 
+var upgradePotSqrt = 1.5
+var upgradeP3 = 1
+
 function potExpression(){
-    let upgradePotSqrt = 1.5
-    let upgradeP3 = 1
     let pot1 = Math.floor(Math.random() * 100) - 100
     let potResult = pot1 * pot1
     problems.innerText = `${pot1}²`
@@ -230,19 +229,17 @@ function potExpression(){
         let result = document.getElementById('result').value
         if(result == potResult){
             totalPoints += ((50/1.5) * (upgradePotSqrt * upgradeP3))
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
 }
 
 function sqrtExpression(){
-    let upgradePotSqrt = 1.5
-    let upgradeP3 = 1
     let sqrt1 = Math.floor(Math.random() * 10000)
     let sqrtResult = Math.sqrt(sqrt1)
     problems.innerText = `√${sqrt1}`
@@ -250,19 +247,20 @@ function sqrtExpression(){
         let result = document.getElementById('result').value
         if(result == sqrtResult){
             totalPoints += ((50/1.5) * (upgradePotSqrt * upgradeP3))
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
 }
 
+var upgradeProduct = 1.35
+var upgradeP4 = 1
+
 function product1Expression(){
-    let upgradeProduct = 1.25
-    let upgradeP4 = 1
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
     let proResult = ((pro1 * pro1) + (2 * pro1 * pro2) + (pro2 * pro2))
@@ -270,20 +268,18 @@ function product1Expression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == proResult){
-            totalPoints += ((100/1.25) * (upgradeProduct * upgradeP4))
-            points.innerText = `${totalPoints} P`
+            totalPoints += ((200/1.35) * (upgradeProduct * upgradeP4))
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
 }
 
 function product2Expression(){
-    let upgradeProduct = 1.25
-    let upgradeP4 = 1
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
     let proResult = ((pro1 * pro1) - (2 * pro1 * pro2) + (pro2 * pro2))
@@ -292,11 +288,11 @@ function product2Expression(){
         let result = document.getElementById('result').value
         if(result == proResult){
             totalPoints += ((100/1.25) * (upgradeProduct * upgradeP4))
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         } else{
             totalPoints -= 1
-            points.innerText = `${totalPoints} P`
+            points.innerText = `${totalPoints.toFixed(2)} P`
             return operation()
         }
     }
@@ -306,17 +302,17 @@ function product2Expression(){
 // Helpers
 
 const btnCall1 = document.getElementById('btnCall1')
+var upgradeToddy = 1.15
+var upgrade1 = 1
 btnCall1.onclick = function(){
-    let upgradeToddy = 2
-    let upgrade1 = 1
     if(totalPoints > 99){
         totalPoints-=100
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall1.innerText = 'Chamou'
         btnCall1.style.backgroundColor = 'green'
         setInterval(function(){
             totalPoints += ((15 / 2) * (upgradeToddy * upgrade1))
-            return points.innerText = `${totalPoints} P`
+            return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall1.disabled = true
         btnToddy.disabled = false
@@ -324,17 +320,17 @@ btnCall1.onclick = function(){
 }
 
 const btnCall2 = document.getElementById('btnCall2')
+var upgradeWine = 1.35
+var upgrade2 = 1
 btnCall2.onclick = function(){
-    let upgradeWine = 1.75
-    let upgrade2 = 1
     if(totalPoints > 249){
         totalPoints-=250
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall2.innerText = 'Chamou'
         btnCall2.style.backgroundColor = 'green'
         setInterval(function(){
             totalPoints += ((40 / 1.75) * (upgradeWine * upgrade2))
-            return points.innerText = `${totalPoints} P`
+            return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall2.disabled = true
         btnWine.disabled = false
@@ -342,17 +338,17 @@ btnCall2.onclick = function(){
 }
 
 const btnCall3 = document.getElementById('btnCall3')
+var upgradeMonster = 1.55
+var upgrade3 = 1
 btnCall3.onclick = function(){
-    let upgradeMonster = 1.5
-    let upgrade3 = 1
     if(totalPoints > 499){
         totalPoints-=500
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall3.innerText = 'Chamou'
         btnCall3.style.backgroundColor = 'green'
         setInterval(function(){
             totalPoints += ((75 / 1.5) * (upgradeMonster * upgrade3))
-            return points.innerText = `${totalPoints} P`
+            return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall3.disabled = true
         btnMonster.disabled = false
@@ -360,17 +356,17 @@ btnCall3.onclick = function(){
 }
 
 const btnCall4 = document.getElementById('btnCall4')
+var upgradeCoffee = 1.75
+var upgrade4 = 1
 btnCall4.onclick = function(){
-    let upgradeCoffee = 1.25
-    let upgrade4 = 1
     if(totalPoints > 999){
         totalPoints-=1000
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall4.innerText = 'Chamou'
         btnCall4.style.backgroundColor = 'green'
         setInterval(function(){
             totalPoints += ((150 / 1.25) * ( upgradeCoffee * upgrade4))
-            return points.innerText = `${totalPoints} P`
+            return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall4.disabled = true
         btnCoffee.disabled = false
@@ -390,22 +386,22 @@ const monsterPrice = document.getElementById('monsterPrice')
 const coffeePrice = document.getElementById('coffeePrice')
 
 let totalToddyPrice = 10
-toddyPrice.innerText = `${totalToddyPrice} P`
+toddyPrice.innerText = `${totalToddyPrice.toFixed(2)} P`
 let totalWinePrice = 25
-winePrice.innerText = `${totalWinePrice} P`
+winePrice.innerText = `${totalWinePrice.toFixed(2)} P`
 let totalMonsterPrice = 50
-monsterPrice.innerText = `${totalMonsterPrice} P`
+monsterPrice.innerText = `${totalMonsterPrice.toFixed(2)} P`
 let totalCoffeePrice = 100
-coffeePrice.innerText = `${totalCoffeePrice} P`
+coffeePrice.innerText = `${totalCoffeePrice.toFixed(2)} P`
 
 let totalChalkPrice = 5
-chalkPrice.innerText = `${totalChalkPrice} P`
+chalkPrice.innerText = `${totalChalkPrice.toFixed(2)} P`
 let totalBookPrice = 12.5
-bookPrice.innerText = `${totalBookPrice} P`
+bookPrice.innerText = `${totalBookPrice.toFixed(2)} P`
 let totalCalculatorPrice = 25
-calculatorPrice.innerText = `${totalCalculatorPrice} P`
+calculatorPrice.innerText = `${totalCalculatorPrice.toFixed(2)} P`
 let totalRulesPrice = 50
-rulesPrice.innerText = `${totalRulesPrice} P`
+rulesPrice.innerText = `${totalRulesPrice.toFixed(2)} P`
 
 // Buttons
 const btnChalk = document.getElementById('btnChalk')
@@ -427,40 +423,40 @@ btnCoffee.disabled = true
 btnToddy.onclick = function(){
     if(totalPoints > totalToddyPrice){
         totalPoints-=totalToddyPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalToddyPrice*=1.25
-        toddyPrice.innerText = `${totalToddyPrice} P`
-        upgrade1*=2
+        toddyPrice.innerText = `${totalToddyPrice.toFixed(2)} P`
+        upgrade1*=1.15
     }
 }
 
 btnWine.onclick = function(){
     if(totalPoints > totalWinePrice){
         totalPoints-=totalWinePrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalWinePrice*=1.5
-        winePrice.innerText = `${totalWinePrice} P`
-        upgrade2*=1.75
+        winePrice.innerText = `${totalWinePrice.toFixed(2)} P`
+        upgrade2*=1.35
     }
 }
 
 btnMonster.onclick = function(){
     if(totalPoints > totalMonsterPrice){
         totalPoints-=totalMonsterPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalMonsterPrice*=1.75
-        monsterPrice.innerText = `${totalMonsterPrice} P`
-        upgrade3*=1.5
+        monsterPrice.innerText = `${totalMonsterPrice.toFixed(2)} P`
+        upgrade3*=1.55
     }
 }
 
 btnCoffee.onclick = function(){
     if(totalPoints > totalCoffeePrice){
         totalPoints-=totalCoffeePrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalCoffeePrice*=2
-        coffeePrice.innerText = `${totalCoffeePrice} P`
-        upgrade4*=1.25
+        coffeePrice.innerText = `${totalCoffeePrice.toFixed(2)} P`
+        upgrade4*=1.75
     }
 }
 
@@ -469,9 +465,9 @@ btnCoffee.onclick = function(){
 btnChalk.onclick = function(){
     if(totalPoints > totalChalkPrice){
         totalPoints-=totalChalkPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalChalkPrice*=1.25
-        chalkPrice.innerText = `${totalChalkPrice} P`
+        chalkPrice.innerText = `${totalChalkPrice.toFixed(2)} P`
         upgradeP1*=2
     }
 }
@@ -479,9 +475,9 @@ btnChalk.onclick = function(){
 btnBook.onclick = function(){
     if(totalPoints > totalBookPrice){
         totalPoints-=totalBookPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalBookPrice*=1.5
-        bookPrice.innerText = `${totalBookPrice} P`
+        bookPrice.innerText = `${totalBookPrice.toFixed(2)} P`
         upgradeP2*=1.75
     }
 }
@@ -489,9 +485,9 @@ btnBook.onclick = function(){
 btnCalculator.onclick = function(){
     if(totalPoints > totalCalculatorPrice){
         totalPoints-=totalCalculatorPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalCalculatorPrice*=1.75
-        calculatorPrice.innerText = `${totalCalculatorPrice} P`
+        calculatorPrice.innerText = `${totalCalculatorPrice.toFixed(2)} P`
         upgradeP3*=1.5
     }
 }
@@ -499,9 +495,9 @@ btnCalculator.onclick = function(){
 btnRules.onclick = function(){
     if(totalPoints > totalRulesPrice){
         totalPoints-=totalRulesPrice
-        points.innerText = `${totalPoints} P`
+        points.innerText = `${totalPoints.toFixed(2)} P`
         totalRulesPrice*=2
-        rulesPrice.innerText = `${totalRulesPrice} P`
-        upgradeP4*=1.25
+        rulesPrice.innerText = `${totalRulesPrice.toFixed(2)} P`
+        upgradeP4*=1.35
     }
 }
