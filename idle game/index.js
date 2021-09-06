@@ -11,18 +11,16 @@ function correct(){
     let imgCorrect = document.getElementById('imgCW')
     imgCorrect.setAttribute('src', 'assets/images/correct.png')
     setInterval(function(){
-        imgWrong.setAttribute('src', 'assets/images/nothing.png')
+        return imgWrong.setAttribute('src', 'assets/images/nothing.png')
     },3000)
-    operation()
 }
 
 function wrong(){
     let imgWrong = document.getElementById('imgCW')
     imgWrong.setAttribute('src', 'assets/images/wrong.png')
     setInterval(function(){
-        imgWrong.setAttribute('src', 'assets/images/nothing.png')
+        return imgWrong.setAttribute('src', 'assets/images/nothing.png')
     },3000)
-    operation()
 }
 
 // Operations
@@ -155,10 +153,9 @@ function operation(){
     }
 }
 
-var upgradeSumSubt = 2
-var upgradeP1 = 1
-
 function sumExpression(){
+    let upgradeSumSubt = 2
+    let upgradeP1 = 1
     let sum1 = Math.floor(Math.random() * 1000)
     let sum2 = Math.floor(Math.random() * 1000)
     let sumResult = sum1 + sum2
@@ -182,6 +179,8 @@ function sumExpression(){
 }
 
 function subtExpression(){
+    let upgradeSumSubt = 2
+    let upgradeP1 = 1
     let subt1 = Math.floor(Math.random() * 1000)
     let subt2 = Math.floor(Math.random() * 1000)
     let subtResult = subt1 - subt2
@@ -204,10 +203,9 @@ function subtExpression(){
     }
 }
 
-var upgradeMultDiv = 1.75
-var upgradeP2 = 1
-
 function multExpression(){
+    let upgradeMultDiv = 1.75
+    let upgradeP2 = 1
     let mult1 = Math.floor(Math.random() * 100)
     let mult2 = Math.floor(Math.random() * 100)
     let multResult = mult1 * mult2
@@ -231,6 +229,8 @@ function multExpression(){
 }
 
 function divExpression(){
+    let upgradeMultDiv = 1.75
+    let upgradeP2 = 1
     let div1 = Math.floor(Math.random() * 100) + 1
     let div2 = Math.floor(Math.random() * 100) + 1
     let divResult = div1 / div2
@@ -253,10 +253,9 @@ function divExpression(){
     }
 }
 
-var upgradePotSqrt = 1.5
-var upgradeP3 = 1
-
 function potExpression(){
+    let upgradePotSqrt = 1.5
+    let upgradeP3 = 1
     let pot1 = Math.floor(Math.random() * 100) - 100
     let potResult = pot1 * pot1
     problems.innerText = `${pot1}²`
@@ -279,6 +278,8 @@ function potExpression(){
 }
 
 function sqrtExpression(){
+    let upgradePotSqrt = 1.5
+    let upgradeP3 = 1
     let sqrt1 = Math.floor(Math.random() * 10000)
     let sqrtResult = Math.sqrt(sqrt1)
     problems.innerText = `√${sqrt1}`
@@ -300,10 +301,9 @@ function sqrtExpression(){
     }
 }
 
-var upgradeProduct = 1.25
-var upgradeP4 = 1
-
 function product1Expression(){
+    let upgradeProduct = 1.25
+    let upgradeP4 = 1
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
     let proResult = ((pro1 * pro1) + (2 * pro1 * pro2) + (pro2 * pro2))
@@ -325,6 +325,8 @@ function product1Expression(){
 }
 
 function product2Expression(){
+    let upgradeProduct = 1.25
+    let upgradeP4 = 1
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
     let proResult = ((pro1 * pro1) - (2 * pro1 * pro2) + (pro2 * pro2))
@@ -348,11 +350,10 @@ function product2Expression(){
 
 // Helpers
 
-var upgradeToddy = 2
-var upgrade1 = 1
-
 const btnCall1 = document.getElementById('btnCall1')
 btnCall1.onclick = function(){
+    let upgradeToddy = 2
+    let upgrade1 = 1
     if(totalPoints > 99){
         totalPoints-=100
         totalPoints = totalPoints.toFixed(2)
@@ -369,11 +370,10 @@ btnCall1.onclick = function(){
     }
 }
 
-var upgradeWine = 1.75
-var upgrade2 = 1
-
 const btnCall2 = document.getElementById('btnCall2')
 btnCall2.onclick = function(){
+    let upgradeWine = 1.75
+    let upgrade2 = 1
     if(totalPoints > 249){
         totalPoints-=250
         totalPoints = totalPoints.toFixed(2)
@@ -390,11 +390,10 @@ btnCall2.onclick = function(){
     }
 }
 
-var upgradeMonster = 1.5
-var upgrade3 = 1
-
 const btnCall3 = document.getElementById('btnCall3')
 btnCall3.onclick = function(){
+    let upgradeMonster = 1.5
+    let upgrade3 = 1
     if(totalPoints > 499){
         totalPoints-=500
         totalPoints = totalPoints.toFixed(2)
@@ -411,11 +410,10 @@ btnCall3.onclick = function(){
     }
 }
 
-var upgradeCoffee = 1.25
-var upgrade4 = 1
-
 const btnCall4 = document.getElementById('btnCall4')
 btnCall4.onclick = function(){
+    let upgradeCoffee = 1.25
+    let upgrade4 = 1
     if(totalPoints > 999){
         totalPoints-=1000
         totalPoints = totalPoints.toFixed(2)
