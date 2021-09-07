@@ -1,3 +1,38 @@
+// Achivements
+
+const achivement1 = document.getElementById('achivement-1')
+const achivement2 = document.getElementById('achivement-2')
+const achivement3 = document.getElementById('achivement-3')
+const achivement4 = document.getElementById('achivement-4')
+/*
+body.onload = function(){
+    if(verf == 4){
+        achivement1.classList.remove('opacity-25')
+        achivement1.classList.add('opacity-100')
+        achivement1.classList.add('text-success')
+    }
+}
+
+function achiv2(){
+    achivement2.classList.remove('opacity-25')
+    achivement2.classList.add('opacity-100')
+    achivement2.classList.add('text-success')
+}
+
+function achiv3(){
+    achivement3.classList.remove('opacity-25')
+    achivement3.classList.add('opacity-100')
+    achivement3.classList.add('text-success')
+}
+
+function achiv4(){
+    achivement4.classList.remove('opacity-25')
+    achivement4.classList.add('opacity-100')
+    achivement4.classList.add('text-success')
+}
+*/
+// Total Points
+
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
@@ -308,10 +343,10 @@ btnCall1.onclick = function(){
     if(totalPoints > 99){
         totalPoints-=100
         points.innerText = `${totalPoints.toFixed(2)} P`
-        btnCall1.innerText = 'Chamou'
+        btnCall1.innerText = 'Called'
         btnCall1.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((15 / 2) * (upgradeToddy * upgrade1))
+            totalPoints += ((15 / 1.15) * (upgradeToddy * upgrade1))
             return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall1.disabled = true
@@ -326,10 +361,10 @@ btnCall2.onclick = function(){
     if(totalPoints > 249){
         totalPoints-=250
         points.innerText = `${totalPoints.toFixed(2)} P`
-        btnCall2.innerText = 'Chamou'
+        btnCall2.innerText = 'Called'
         btnCall2.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((40 / 1.75) * (upgradeWine * upgrade2))
+            totalPoints += ((40 / 1.35) * (upgradeWine * upgrade2))
             return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall2.disabled = true
@@ -344,10 +379,10 @@ btnCall3.onclick = function(){
     if(totalPoints > 499){
         totalPoints-=500
         points.innerText = `${totalPoints.toFixed(2)} P`
-        btnCall3.innerText = 'Chamou'
+        btnCall3.innerText = 'Called'
         btnCall3.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((75 / 1.5) * (upgradeMonster * upgrade3))
+            totalPoints += ((75 / 1.55) * (upgradeMonster * upgrade3))
             return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall3.disabled = true
@@ -362,10 +397,10 @@ btnCall4.onclick = function(){
     if(totalPoints > 999){
         totalPoints-=1000
         points.innerText = `${totalPoints.toFixed(2)} P`
-        btnCall4.innerText = 'Chamou'
+        btnCall4.innerText = 'Called'
         btnCall4.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((150 / 1.25) * ( upgradeCoffee * upgrade4))
+            totalPoints += ((150 / 1.75) * ( upgradeCoffee * upgrade4))
             return points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall4.disabled = true
