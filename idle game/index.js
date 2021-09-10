@@ -29,12 +29,13 @@ function achiv4(){
     achivement4.classList.add('text-success')
 }
 */
+
 // Total Points
 
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
-var totalPoints = 1000000
+var totalPoints = 0
 points.innerText = `${totalPoints} P`
 
 // Operations
@@ -117,7 +118,7 @@ btnProduct.onclick = function(){
             btnMultDiv.classList.remove('btn-danger')
             btnMultDiv.classList.add('btn-success')
             btnMultDiv.disabled = true
-            return n+=4
+            return n+=6
         } else{
             btnPotSqrt.disabled = true
         }

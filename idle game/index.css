@@ -1,0 +1,34 @@
+body{
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.img-style{
+    background-image: url(http://4.bp.blogspot.com/_xYlAKlGufEs/TVAzidJOTpI/AAAAAAAAAAY/mCF66xtmQEw/s1600/binario.jpg);
+}
+
+.button-text-ok{
+    padding: 10px;
+}
+
+.padding-bottom{
+    padding-bottom: 15px;
+}
+
+.margin-top{
+    margin-top: 10px;
+}
+
+#problems{
+    overflow-y: scroll;
+    height: 35.5em;
+}
+
+#operations{
+    overflow-y: scroll;
+    height: 35.5em;
+}
+
+#helpers{
+    overflow-y: scroll;
+    height: 35.5em;
+}
