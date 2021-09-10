@@ -5,12 +5,10 @@ const achivement2 = document.getElementById('achivement-2')
 const achivement3 = document.getElementById('achivement-3')
 const achivement4 = document.getElementById('achivement-4')
 /*
-body.onload = function(){
-    if(verf == 4){
-        achivement1.classList.remove('opacity-25')
-        achivement1.classList.add('opacity-100')
-        achivement1.classList.add('text-success')
-    }
+function achiv1(){
+    achivement1.classList.remove('opacity-25')
+    achivement1.classList.add('opacity-100')
+    achivement1.classList.add('text-success')
 }
 
 function achiv2(){
@@ -36,7 +34,7 @@ function achiv4(){
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
-var totalPoints = 0
+var totalPoints = 1000000
 points.innerText = `${totalPoints} P`
 
 // Operations
@@ -455,84 +453,164 @@ btnCoffee.disabled = true
 
 // Helpers Buttons
 
+let a = 0
 btnToddy.onclick = function(){
-    if(totalPoints > totalToddyPrice){
+    if(totalPoints > totalToddyPrice && a < 9){
         totalPoints-=totalToddyPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalToddyPrice*=1.25
         toddyPrice.innerText = `${totalToddyPrice.toFixed(2)} P`
         upgrade1*=1.15
+        a++
+    } else if(a >= 9){
+        totalPoints-=totalToddyPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        toddyPrice.innerText = `Lvl. MAX.`
+        upgrade1*=1.15
+        btnToddy.style.backgroundColor = 'green'
+        btnToddy.innerText = '---'
+        btnToddy.disabled = true
     }
 }
 
+let b = 0
 btnWine.onclick = function(){
-    if(totalPoints > totalWinePrice){
+    if(totalPoints > totalWinePrice && b < 9){
         totalPoints-=totalWinePrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalWinePrice*=1.5
         winePrice.innerText = `${totalWinePrice.toFixed(2)} P`
         upgrade2*=1.35
+        b++
+    } else if(b >= 9){
+        totalPoints-=totalWinePrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        winePrice.innerText = `Lvl. MAX.`
+        upgrade2*=1.35
+        btnWine.style.backgroundColor = 'green'
+        btnWine.innerText = '---'
+        btnWine.disabled = true
     }
 }
 
+let c = 0
 btnMonster.onclick = function(){
-    if(totalPoints > totalMonsterPrice){
+    if(totalPoints > totalMonsterPrice && c < 9){
         totalPoints-=totalMonsterPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalMonsterPrice*=1.75
         monsterPrice.innerText = `${totalMonsterPrice.toFixed(2)} P`
         upgrade3*=1.55
+        c++
+    } else if(c >= 9){
+        totalPoints-=totalMonsterPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        monsterPrice.innerText = `Lvl. MAX.`
+        upgrade3*=1.55
+        btnMonster.style.backgroundColor = 'green'
+        btnMonster.innerText = '---'
+        btnMonster.disabled = true
     }
 }
 
+let d = 0
 btnCoffee.onclick = function(){
-    if(totalPoints > totalCoffeePrice){
+    if(totalPoints > totalCoffeePrice && d < 9){
         totalPoints-=totalCoffeePrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalCoffeePrice*=2
         coffeePrice.innerText = `${totalCoffeePrice.toFixed(2)} P`
         upgrade4*=1.75
+        d++
+    } else if(d >= 9){
+        totalPoints-=totalCoffeePrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        coffeePrice.innerText = `Lvl. MAX.`
+        upgrade4*=1.75
+        btnCoffee.style.backgroundColor = 'green'
+        btnCoffee.innerText = '---'
+        btnCoffee.disabled = true
     }
 }
 
 // Players Buttons
 
+let i = 0
 btnChalk.onclick = function(){
-    if(totalPoints > totalChalkPrice){
+    if(totalPoints > totalChalkPrice && i < 9){
         totalPoints-=totalChalkPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalChalkPrice*=1.25
         chalkPrice.innerText = `${totalChalkPrice.toFixed(2)} P`
         upgradeP1*=2
+        i++
+    } else if(i >= 9){
+        totalPoints-=totalChalkPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        chalkPrice.innerText = `Lvl. MAX.`
+        upgradeP1*=2
+        btnChalk.style.backgroundColor = 'green'
+        btnChalk.innerText = '---'
+        btnChalk.disabled = true
     }
 }
 
+let j = 0
 btnBook.onclick = function(){
-    if(totalPoints > totalBookPrice){
+    if(totalPoints > totalBookPrice && j < 9){
         totalPoints-=totalBookPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalBookPrice*=1.5
         bookPrice.innerText = `${totalBookPrice.toFixed(2)} P`
         upgradeP2*=1.75
+        j++
+    } else if(j >= 9){
+        totalPoints-=totalBookPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        bookPrice.innerText = `Lvl. MAX.`
+        upgradeP2*=1.75
+        btnBook.style.backgroundColor = 'green'
+        btnBook.innerText = '---'
+        btnBook.disabled = true
     }
 }
 
+let k = 0
 btnCalculator.onclick = function(){
-    if(totalPoints > totalCalculatorPrice){
+    if(totalPoints > totalCalculatorPrice && k < 9){
         totalPoints-=totalCalculatorPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalCalculatorPrice*=1.75
         calculatorPrice.innerText = `${totalCalculatorPrice.toFixed(2)} P`
         upgradeP3*=1.5
+        k++
+    } else if(k >= 9){
+        totalPoints-=totalCalculatorPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        calculatorPrice.innerText = `Lvl. MAX.`
+        upgradeP3*=1.5
+        btnCalculator.style.backgroundColor = 'green'
+        btnCalculator.innerText = '---'
+        btnCalculator.disabled = true
     }
 }
 
+let l = 0
 btnRules.onclick = function(){
-    if(totalPoints > totalRulesPrice){
+    if(totalPoints > totalRulesPrice && l < 9){
         totalPoints-=totalRulesPrice
         points.innerText = `${totalPoints.toFixed(2)} P`
         totalRulesPrice*=2
         rulesPrice.innerText = `${totalRulesPrice.toFixed(2)} P`
         upgradeP4*=1.35
+        l++
+    } else if(l >= 9){
+        totalPoints-=totalRulesPrice
+        points.innerText = `${totalPoints.toFixed(2)} P`
+        rulesPrice.innerText = `Lvl. MAX.`
+        upgradeP4*=1.35
+        btnRules.style.backgroundColor = 'green'
+        btnRules.innerText = '---'
+        btnRules.disabled = true
     }
 }
