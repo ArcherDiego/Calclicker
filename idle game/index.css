@@ -18,6 +18,10 @@ body{
     margin-top: 10px;
 }
 
+.table-margin-top{
+    margin-top: 75px;
+}
+
 #problems{
     overflow-y: scroll;
     height: 35.5em;

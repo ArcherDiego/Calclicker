@@ -35,7 +35,7 @@ function achiv4(){
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
-var totalPoints = 0
+var totalPoints = 10000
 points.innerText = `${totalPoints} P`
 
 // Operations
@@ -168,6 +168,9 @@ function operation(){
     }
 }
 
+// Sum & Subtraction
+const tableChalk = document.getElementById('tableChalk')
+tableChalk.innerText = `${(2).toFixed(2)} P`
 var upgradeSumSubt = 2
 var upgradeP1 = 1
 
@@ -179,7 +182,9 @@ function sumExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == sumResult){
-            totalPoints += ( 1 * (upgradeSumSubt * upgradeP1))
+            let sumPoints = ( 1 * (upgradeSumSubt * upgradeP1))
+            tableChalk.innerText = `${sumPoints.toFixed(2)} P`
+            totalPoints += sumPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         } else{
@@ -198,7 +203,9 @@ function subtExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == subtResult){
-            totalPoints += ( 1 * (upgradeSumSubt * upgradeP1))
+            let sumPoints = ( 1 * (upgradeSumSubt * upgradeP1))
+            tableChalk.innerText = `${sumPoints.toFixed(2)} P`
+            totalPoints += sumPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
             operation()
         } else{
@@ -209,6 +216,9 @@ function subtExpression(){
     }
 }
 
+// Multiplication & Division
+const tableBook = document.getElementById('tableBook')
+tableBook.innerText = `${(10).toFixed(2)} P`
 var upgradeMultDiv = 1.75
 var upgradeP2 = 1
 
@@ -220,13 +230,15 @@ function multExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == multResult){
-            totalPoints += ((10/1.75) * (upgradeMultDiv * upgradeP2))
+            let multPoints = ((10/1.75) * (upgradeMultDiv * upgradeP2))
+            tableBook.innerText = `${multPoints.toFixed(2)} P`
+            totalPoints += multPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
@@ -237,21 +249,25 @@ function divExpression(){
     let divResult = div1 / div2
     divResult = divResult.toFixed(2)
     problems.innerText = `${div1} ÷ ${div2}`
-    console.log(divResult)
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == divResult){
-            totalPoints += ((10/1.75) * (upgradeMultDiv * upgradeP2))
+            let multPoints = ((10/1.75) * (upgradeMultDiv * upgradeP2))
+            tableBook.innerText = `${multPoints.toFixed(2)} P`
+            totalPoints += multPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
 
+// Potency & SquareRoot
+const tableCalculator = document.getElementById('tableCalculator')
+tableCalculator.innerText = `${(50).toFixed(2)} P`
 var upgradePotSqrt = 1.5
 var upgradeP3 = 1
 
@@ -262,13 +278,15 @@ function potExpression(){
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == potResult){
-            totalPoints += ((50/1.5) * (upgradePotSqrt * upgradeP3))
+            let potPoints = ((50/1.5) * (upgradePotSqrt * upgradeP3))
+            tableCalculator.innerText = `${potPoints.toFixed(2)} P`
+            totalPoints += potPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
@@ -276,39 +294,47 @@ function potExpression(){
 function sqrtExpression(){
     let sqrt1 = Math.floor(Math.random() * 10000)
     let sqrtResult = Math.sqrt(sqrt1)
+    sqrtResult = sqrtResult.toFixed(2)
     problems.innerText = `√${sqrt1}`
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == sqrtResult){
-            totalPoints += ((50/1.5) * (upgradePotSqrt * upgradeP3))
+            let potPoints = ((50/1.5) * (upgradePotSqrt * upgradeP3))
+            tableCalculator.innerText = `${potPoints.toFixed(2)} P`
+            totalPoints += potPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
 
+// Remarkable Product
+const tableRules = document.getElementById('tableRules')
+tableRules.innerText = `${(100).toFixed(2)} P`
 var upgradeProduct = 1.35
 var upgradeP4 = 1
 
 function product1Expression(){
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
-    let proResult = ((pro1 * pro1) + (2 * pro1 * pro2) + (pro2 * pro2))
-    problems.innerText = `(${pro1}x + ${pro2})²`
+    let proResult = (pro1 + pro2) * (pro1 + pro2)
+    problems.innerText = `(${pro1} + ${pro2})²`
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == proResult){
-            totalPoints += ((200/1.35) * (upgradeProduct * upgradeP4))
+            let productPoints = ((200/1.35) * (upgradeProduct * upgradeP4))
+            tableRules.innerText = `${productPoints.toFixed(2)} P`
+            totalPoints += productPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
@@ -316,18 +342,20 @@ function product1Expression(){
 function product2Expression(){
     let pro1 = Math.floor(Math.random() * 25) + 1
     let pro2 = Math.floor(Math.random() * 25) + 1
-    let proResult = ((pro1 * pro1) - (2 * pro1 * pro2) + (pro2 * pro2))
-    problems.innerText = `(${div1}x - ${div2})²`
+    let proResult = ((pro1 - pro2) * (pro1 - pro2))
+    problems.innerText = `(${div1} - ${div2})²`
     buttonOK.onclick = function(){
         let result = document.getElementById('result').value
         if(result == proResult){
-            totalPoints += ((100/1.25) * (upgradeProduct * upgradeP4))
+            let productPoints = ((200/1.35) * (upgradeProduct * upgradeP4))
+            tableRules.innerText = `${productPoints.toFixed(2)} P`
+            totalPoints += productPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         } else{
             totalPoints -= 1
             points.innerText = `${totalPoints.toFixed(2)} P`
-            return operation()
+            operation()
         }
     }
 }
@@ -335,72 +363,96 @@ function product2Expression(){
 
 // Helpers
 
+const tableToddy = document.getElementById('tableToddy')
+tableToddy.innerText = `${0} P`
 const btnCall1 = document.getElementById('btnCall1')
 var upgradeToddy = 1.15
 var upgrade1 = 1
 btnCall1.onclick = function(){
     if(totalPoints > 99){
+        let toddyPoints = 15
+        tableToddy.innerText = `${toddyPoints.toFixed(2)} P`
         totalPoints-=100
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall1.innerText = 'Called'
         btnCall1.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((15 / 1.15) * (upgradeToddy * upgrade1))
-            return points.innerText = `${totalPoints.toFixed(2)} P`
+            toddyPoints = ((15 / 1.15) * (upgradeToddy * upgrade1))
+            tableToddy.innerText = `${toddyPoints.toFixed(2)} P`
+            totalPoints += toddyPoints
+            points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall1.disabled = true
         btnToddy.disabled = false
     }
 }
 
+const tableWine = document.getElementById('tableWine')
+tableWine.innerText = `${0} P`
 const btnCall2 = document.getElementById('btnCall2')
 var upgradeWine = 1.35
 var upgrade2 = 1
 btnCall2.onclick = function(){
     if(totalPoints > 249){
+        let winePoints = 40
+        tableWine.innerText = `${winePoints.toFixed(2)} P`
         totalPoints-=250
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall2.innerText = 'Called'
         btnCall2.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((40 / 1.35) * (upgradeWine * upgrade2))
-            return points.innerText = `${totalPoints.toFixed(2)} P`
+            winePoints = ((40 / 1.35) * (upgradeWine * upgrade2))
+            tableWine.innerText = `${winePoints.toFixed(2)} P`
+            totalPoints += winePoints
+            points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall2.disabled = true
         btnWine.disabled = false
     }
 }
 
+const tableMonster = document.getElementById('tableMonster')
+tableMonster.innerText = `${0} P`
 const btnCall3 = document.getElementById('btnCall3')
 var upgradeMonster = 1.55
 var upgrade3 = 1
 btnCall3.onclick = function(){
     if(totalPoints > 499){
+        let monsterPoints = 75
+        tableMonster.innerText = `${monsterPoints.toFixed(2)} P`
         totalPoints-=500
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall3.innerText = 'Called'
         btnCall3.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((75 / 1.55) * (upgradeMonster * upgrade3))
-            return points.innerText = `${totalPoints.toFixed(2)} P`
+            monsterPoints = ((75 / 1.55) * (upgradeMonster * upgrade3))
+            tableMonster.innerText = `${monsterPoints.toFixed(2)} P`
+            totalPoints += monsterPoints
+            points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall3.disabled = true
         btnMonster.disabled = false
     }
 }
 
+const tableCoffee = document.getElementById('tableCoffee')
+tableCoffee.innerText = `${0} P`
 const btnCall4 = document.getElementById('btnCall4')
 var upgradeCoffee = 1.75
 var upgrade4 = 1
 btnCall4.onclick = function(){
     if(totalPoints > 999){
+        let coffeePoints = 150
+        tableCoffee.innerText = `${coffeePoints.toFixed(2)} P`
         totalPoints-=1000
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall4.innerText = 'Called'
         btnCall4.style.backgroundColor = 'green'
         setInterval(function(){
-            totalPoints += ((150 / 1.75) * ( upgradeCoffee * upgrade4))
-            return points.innerText = `${totalPoints.toFixed(2)} P`
+            coffeePoints = ((150 / 1.75) * ( upgradeCoffee * upgrade4))
+            tableCoffee.innerText = `${coffeePoints.toFixed(2)} P`
+            totalPoints += coffeePoints
+            points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
         btnCall4.disabled = true
         btnCoffee.disabled = false
