@@ -22,17 +22,18 @@ body{
     margin-top: 75px;
 }
 
+.height-page{
+    align-items: stretch;
+}
+
 #problems{
     overflow-y: scroll;
-    height: 35.5em;
 }
 
 #operations{
     overflow-y: scroll;
-    height: 35.5em;
 }
 
 #helpers{
     overflow-y: scroll;
-    height: 35.5em;
 }
