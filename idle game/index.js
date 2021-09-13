@@ -1,41 +1,9 @@
-// Achivements
-
-const achivement1 = document.getElementById('achivement-1')
-const achivement2 = document.getElementById('achivement-2')
-const achivement3 = document.getElementById('achivement-3')
-const achivement4 = document.getElementById('achivement-4')
-/*
-function achiv1(){
-    achivement1.classList.remove('opacity-25')
-    achivement1.classList.add('opacity-100')
-    achivement1.classList.add('text-success')
-}
-
-function achiv2(){
-    achivement2.classList.remove('opacity-25')
-    achivement2.classList.add('opacity-100')
-    achivement2.classList.add('text-success')
-}
-
-function achiv3(){
-    achivement3.classList.remove('opacity-25')
-    achivement3.classList.add('opacity-100')
-    achivement3.classList.add('text-success')
-}
-
-function achiv4(){
-    achivement4.classList.remove('opacity-25')
-    achivement4.classList.add('opacity-100')
-    achivement4.classList.add('text-success')
-}
-*/
-
 // Total Points
 
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
-var totalPoints = 10000
+var totalPoints = 0
 points.innerText = `${totalPoints} P`
 
 // Operations
