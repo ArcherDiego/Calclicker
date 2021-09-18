@@ -3,7 +3,7 @@
 const body = document.getElementsByTagName('body')[0]
 const points = document.getElementById('points')
 
-var totalPoints = 0
+let totalPoints = 10000
 points.innerText = `${totalPoints} P`
 
 // Operations
@@ -26,21 +26,23 @@ btnProduct.innerText = `${interruptProduct}`
 
 btnSumSubt.disabled = true
 
-btnMultDiv.onclick = function(){
-    if(interruptMultDiv == 'OFF'){
-        interruptMultDiv = 'ON'
-        btnMultDiv.innerText = `${interruptMultDiv}`
-        btnMultDiv.classList.remove('btn-danger')
-        btnMultDiv.classList.add('btn-success')
-        return n+=2
-    } else{
-        interruptMultDiv = 'OFF'
-        btnMultDiv.innerText = `${interruptMultDiv}`
-        btnMultDiv.classList.remove('btn-success')
-        btnMultDiv.classList.add('btn-danger')
-        return n-=2
+const toggleBtn = (interrupt, sumNum) => {
+    const button = document.getElementById(interrupt)
+    if(button.innerText == 'OFF'){
+        button.innerText = 'ON'
+        button.innerText = `${button.innerText}`
+        button.classList.remove('btn-danger')
+        button.classList.add('btn-success')
+        return n+=sumNum
+    } else {
+        button.innerText = 'OFF'
+        button.innerText = `${button.innerText}`
+        button.classList.remove('btn-success')
+        button.classList.add('btn-danger')
+        return n-=sumNum
     }
 }
+btnMultDiv.onclick = () => toggleBtn('btnMultDiv', 2)
 
 btnPotSqrt.onclick = function(){
     if(interruptPotSqrt == 'OFF'){
@@ -139,8 +141,8 @@ function operation(){
 // Sum & Subtraction
 const tableChalk = document.getElementById('tableChalk')
 tableChalk.innerText = `${(2).toFixed(2)} P`
-var upgradeSumSubt = 2
-var upgradeP1 = 1
+let upgradeSumSubt = 2
+let upgradeP1 = 1
 
 function sumExpression(){
     let sum1 = Math.floor(Math.random() * 1000)
@@ -187,8 +189,8 @@ function subtExpression(){
 // Multiplication & Division
 const tableBook = document.getElementById('tableBook')
 tableBook.innerText = `${(10).toFixed(2)} P`
-var upgradeMultDiv = 1.75
-var upgradeP2 = 1
+let upgradeMultDiv = 1.75
+let upgradeP2 = 1
 
 function multExpression(){
     let mult1 = Math.floor(Math.random() * 100)
@@ -236,8 +238,8 @@ function divExpression(){
 // Potency & SquareRoot
 const tableCalculator = document.getElementById('tableCalculator')
 tableCalculator.innerText = `${(50).toFixed(2)} P`
-var upgradePotSqrt = 1.5
-var upgradeP3 = 1
+let upgradePotSqrt = 1.5
+let upgradeP3 = 1
 
 function potExpression(){
     let pot1 = Math.floor(Math.random() * 100) - 100
@@ -283,8 +285,8 @@ function sqrtExpression(){
 // Remarkable Product
 const tableRules = document.getElementById('tableRules')
 tableRules.innerText = `${(100).toFixed(2)} P`
-var upgradeProduct = 1.35
-var upgradeP4 = 1
+let upgradeProduct = 1.35
+let upgradeP4 = 1
 
 function product1Expression(){
     let pro1 = Math.floor(Math.random() * 25) + 1
@@ -334,19 +336,19 @@ function product2Expression(){
 const tableToddy = document.getElementById('tableToddy')
 tableToddy.innerText = `${0} P`
 const btnCall1 = document.getElementById('btnCall1')
-var upgradeToddy = 1.15
-var upgrade1 = 1
+let upgradeToddy = 1.15
+let upgrade1 = 1
 btnCall1.onclick = function(){
     if(totalPoints > 99){
         let toddyPoints = 15
-        tableToddy.innerText = `${toddyPoints.toFixed(2)} P`
+        tableToddy.innerText = `${toddyPoints.toFixed(2)}/min P`
         totalPoints-=100
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall1.innerText = 'Called'
         btnCall1.style.backgroundColor = 'green'
         setInterval(function(){
             toddyPoints = ((15 / 1.15) * (upgradeToddy * upgrade1))
-            tableToddy.innerText = `${toddyPoints.toFixed(2)} P`
+            tableToddy.innerText = `${toddyPoints.toFixed(2)}/min P`
             totalPoints += toddyPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
@@ -358,19 +360,19 @@ btnCall1.onclick = function(){
 const tableWine = document.getElementById('tableWine')
 tableWine.innerText = `${0} P`
 const btnCall2 = document.getElementById('btnCall2')
-var upgradeWine = 1.35
-var upgrade2 = 1
+let upgradeWine = 1.35
+let upgrade2 = 1
 btnCall2.onclick = function(){
     if(totalPoints > 249){
         let winePoints = 40
-        tableWine.innerText = `${winePoints.toFixed(2)} P`
+        tableWine.innerText = `${winePoints.toFixed(2)}/min P`
         totalPoints-=250
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall2.innerText = 'Called'
         btnCall2.style.backgroundColor = 'green'
         setInterval(function(){
             winePoints = ((40 / 1.35) * (upgradeWine * upgrade2))
-            tableWine.innerText = `${winePoints.toFixed(2)} P`
+            tableWine.innerText = `${winePoints.toFixed(2)}/min P`
             totalPoints += winePoints
             points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
@@ -382,19 +384,19 @@ btnCall2.onclick = function(){
 const tableMonster = document.getElementById('tableMonster')
 tableMonster.innerText = `${0} P`
 const btnCall3 = document.getElementById('btnCall3')
-var upgradeMonster = 1.55
-var upgrade3 = 1
+let upgradeMonster = 1.55
+let upgrade3 = 1
 btnCall3.onclick = function(){
     if(totalPoints > 499){
         let monsterPoints = 75
-        tableMonster.innerText = `${monsterPoints.toFixed(2)} P`
+        tableMonster.innerText = `${monsterPoints.toFixed(2)}/min P`
         totalPoints-=500
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall3.innerText = 'Called'
         btnCall3.style.backgroundColor = 'green'
         setInterval(function(){
             monsterPoints = ((75 / 1.55) * (upgradeMonster * upgrade3))
-            tableMonster.innerText = `${monsterPoints.toFixed(2)} P`
+            tableMonster.innerText = `${monsterPoints.toFixed(2)}/min P`
             totalPoints += monsterPoints
             points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
@@ -406,19 +408,19 @@ btnCall3.onclick = function(){
 const tableCoffee = document.getElementById('tableCoffee')
 tableCoffee.innerText = `${0} P`
 const btnCall4 = document.getElementById('btnCall4')
-var upgradeCoffee = 1.75
-var upgrade4 = 1
+let upgradeCoffee = 1.75
+let upgrade4 = 1
 btnCall4.onclick = function(){
     if(totalPoints > 999){
         let coffeePoints = 150
-        tableCoffee.innerText = `${coffeePoints.toFixed(2)} P`
+        tableCoffee.innerText = `${coffeePoints.toFixed(2)}/min P`
         totalPoints-=1000
         points.innerText = `${totalPoints.toFixed(2)} P`
         btnCall4.innerText = 'Called'
         btnCall4.style.backgroundColor = 'green'
         setInterval(function(){
             coffeePoints = ((150 / 1.75) * ( upgradeCoffee * upgrade4))
-            tableCoffee.innerText = `${coffeePoints.toFixed(2)} P`
+            tableCoffee.innerText = `${coffeePoints.toFixed(2)}/min P`
             totalPoints += coffeePoints
             points.innerText = `${totalPoints.toFixed(2)} P`
         },60000)
